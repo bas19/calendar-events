@@ -10,14 +10,7 @@ class Event extends Model
 
     protected $fillable = ['title', 'start_date', 'end_date'];
 
-    protected $dates    = ['start_date', 'end_date'];
-
-    public function saveQuietly(array $options = [])
-    {
-        return static::withoutEvents(function () use ($options) {
-            return $this->save($options);
-        });
-    }
+    protected $dates = ['start_date', 'end_date'];
 
     public function events()
     {

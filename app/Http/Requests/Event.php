@@ -26,7 +26,14 @@ class Event extends FormRequest
         return [
             'title' => 'required|string',
             'start_date' => 'required|date',
-            'end_date' => 'required|date'
+            'end_date' => 'required|date',
+            'monday' => 'required|boolean',
+            'tuesday' => 'required|boolean',
+            'wednesday' => 'required|boolean',
+            'thursday' => 'required|boolean',
+            'friday' => 'required|boolean',
+            'saturday' => 'required|boolean',
+            'sunday' => 'required|boolean'
         ];
     }
 }
