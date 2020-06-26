@@ -28,6 +28,9 @@
         "toastr": "^2.1.4",
         "vue-toastr-2": "0.0.10"
     },
+    "optionalDependencies": {
+        "fsevents": "^1.0.0"
+    },
     "engines": {
         "node": "12.5.0",
         "npm": "6.9.0"
