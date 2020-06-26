@@ -8,6 +8,12 @@ use App\Entities\Event;
 
 class EventService {
 
+    /**
+     * A service to create events
+     * 
+     * @param App\Entities\Event $event
+     * @return App\Entities\Event
+     */
     public function create($event) 
     {
         $day_in_week = [
@@ -32,7 +38,7 @@ class EventService {
 
             $day = $date->format('D');
             
-            // check allowed recurring day
+            // This will check the allowed recurring day
             if ($day_in_week[$day]) {
                 $date = $date->format('Y-m-d');
                 $item = new Event();
@@ -46,6 +52,12 @@ class EventService {
         return $this->show($new_event->id);
     }
 
+    /**
+     * Get events by id
+     * 
+     * @param $id
+     * @return App\Entities\Event
+     */
     public function show($id)
     {
         return Event::findOrFail($id);
