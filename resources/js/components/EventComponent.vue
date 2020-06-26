@@ -152,6 +152,16 @@
                     return;
                 }
 
+                var start = moment(this.start_date);
+                var end = moment(this.end_date);
+
+                let diff = end.diff(start, 'days');
+
+                if (diff < 0) {
+                    this.$toastr.error('End date must be a future date.', 'Error');
+                    return;
+                }
+
                 this.addEvent();
             },
             getMonthDays () {
