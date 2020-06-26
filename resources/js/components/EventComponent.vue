@@ -12,15 +12,16 @@
                         </div>
                         <div class="row">
                             <div class="col-6">
+                               
                                 <div class="form-group">
                                     <label for="start_date">Start Date</label>
-                                    <input type="date" v-model="start_date" class="form-control" name="start_date" id="start_date" placeholder="Start Date">
+                                    <datepicker v-model="start_date" input-class="form-control"></datepicker>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="end_date">End Date</label>
-                                    <input type="date" v-model="end_date" class="form-control" name="end_date" id="end_date" placeholder="End Date">
+                                    <datepicker v-model="end_date" input-class="form-control"></datepicker>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +81,7 @@
                     <ul>
                         <li v-bind:class="{ active: hasEvent(day) }" v-for="(day, index) in month_days" :key="index">
                             {{ day.format('D') + ' ' + day.format('ddd') }} 
-                            {{ (hasEvent(day)) ? '-   ' + event_title : '' }}
+                            <span>{{ (hasEvent(day)) ? event_title : '' }}</span>
                         </li>
                     </ul>
                 </div>
@@ -92,10 +93,14 @@
 
 <script>
     import EventService from '../services/event';
+    import Datepicker from 'vuejs-datepicker';
 
     var moment = require('moment');
 
     export default {
+        components: {
+            Datepicker
+        },
         created () {
             this.getMonthDays();
         },
@@ -227,9 +232,16 @@ ul {
 ul li {
     padding: 8px;
     border-bottom: 1px solid #ddd;
+    position: relative;
 }
 ul li.active {
     background: #3a6990;
     color: #fff;
+}
+ul li span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 </style>

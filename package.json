@@ -25,7 +25,8 @@
     "dependencies": {
         "moment": "^2.27.0",
         "toastr": "^2.1.4",
-        "vue-toastr-2": "0.0.10"
+        "vue-toastr-2": "0.0.10",
+        "vuejs-datepicker": "^1.6.2"
     },
     "optionalDependencies": {
         "fsevents": "^1.0.0"
