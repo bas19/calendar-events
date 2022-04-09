@@ -23,7 +23,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "moment": "^2.27.0",
+        "moment": "^2.29.2",
         "toastr": "^2.1.4",
         "vue-toastr-2": "0.0.10",
         "vuejs-datepicker": "^1.6.2"
